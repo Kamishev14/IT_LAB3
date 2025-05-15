@@ -8,6 +8,11 @@ namespace LABS3.Models
 {
     public class Patient
     {
+        public Patient()
+        {
+            Doctors = new List<Doctor>();
+        }
+
         [Key]
         public int Id { get; set; }
         [Required]
@@ -16,6 +21,6 @@ namespace LABS3.Models
         [Display(Name="Patient Code")]
         [MaxLength(5)]
         public string PatientCode { get; set; }
-        public virtual List<Doctor> Doctors { get; set; }
+        public virtual ICollection<Doctor> Doctors { get; set; }
     }
 }
